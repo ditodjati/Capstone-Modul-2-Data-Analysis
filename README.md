@@ -1,58 +1,81 @@
-# Capstone-Modul-2-Data-Analysis
+# TransJakarta Passenger Transaction & Operational Analysis
 
-**Deskripsi Proyek**
+A data-driven analytics project aimed at evaluating operational performance, passenger behavior, and service efficiency of the **TransJakarta** bus network. This project utilizes descriptive and inferential statistics to deliver actionable business insights and strategic recommendations.
 
-Proyek ini bertujuan untuk menganalisis permasalahan nyata yang dihadapi oleh layanan TransJakarta berdasarkan data transaksi penumpang, dan bagaimana rekomendasi perbaikannya secara bisnis.
-Berdasarkan analisis data dan dukungan informasi dari sumber eksternal, berikut adalah enam permasalahan utama yang menjadi fokus proyek ini:
-1. Kepadatan Penumpang dan Keterlambatan Bus
-2. Penyerobotan Jalur Busway oleh Kendaraan Pribadi
-3. Perubahan Rute dan Kekhawatiran Penumpang
-4. Perubahan Nama Halte yang Membingungkan Penumpang
-5. Pelanggaran Tap Out dan Pemotongan Saldo Ganda
-6. Kartu Elektronik Digunakan oleh Banyak Orang
-Melalui analisis yang berfokus pada enam isu ini, diharapkan ditemukan insight yang dapat menjadi dasar rekomendasi peningkatan kualitas layanan TransJakarta dari sisi operasional dan pengalaman pelanggan.
+---
 
-**Dataset**
+## 📌 Project Overview
+TransJakarta is the backbone of public transportation in Jakarta. However, operational bottlenecks often hinder its efficiency. This project focuses on analyzing real transaction data to identify pain points in passenger distribution, travel times, and system compliance.
 
-Dataset transaksi TransJakarta terdiri dari 37.900 baris dan 22 kolom, yang merekam aktivitas perjalanan penumpang menggunakan sistem tap-in dan tap-out. Data ini mencakup informasi pengguna, lokasi halte, waktu perjalanan, dan pembayaran.
+Based on the data analysis and supporting operational contexts, this project highlights several core focus areas:
+1. Passenger congestion and bus delays during peak hours.
+2. Inconsistencies in corridor travel times and *headway* management.
+3. System compliance issues, such as missing tap-out records and duplicate entries.
+4. Passenger demographics and payment method utilization.
 
-**Teknik analisis**
+---
 
-Statistik deskriptif dan statistik inferensial yang menggunakan t-test dan chi-square. 
+## 🚀 Key Features & Analysis Modules
 
-**Kesimpulan dan saran**
+The analytical workflow within the project notebook is structured as follows:
 
-Berdasarkan hasil analisis data Transjakarta, dapat disimpulkan bahwa:
+### 1. Data Cleaning & Preprocessing
+* Handled missing values, particularly the **1,344 transactions (3.55%)** with missing tap-out data.
+* Checked for duplicate entries, discovering **4 precise duplicate transactions** (identical timestamps and tap-in stations).
+* Validated data consistency across GPS coordinates and station naming conventions.
 
-1. Kondisi Layanan Transjakarta
-   - Waktu tempuh perjalanan pada jam sibuk (06.00–09.00 & 16.00–19.00) rata-rata mencapai 74,5 menit, jauh lebih lama dibanding jam non-sibuk.
-   - Koridor “Kampung Rambutan - Blok M” memiliki durasi perjalanan rata-rata tertinggi (~85 menit) dan berada dalam daftar 10 koridor dengan volume penumpang terendah — indikasi adanya hambatan atau kurangnya efisiensi.
-   - Halte Penjaringan menjadi titik masuk penumpang terbanyak, diikuti oleh halte Garuda Taman Mini dan BKN.
-   - Jumlah penumpang sangat terkonsentrasi pada hari kerja (±6.800 per hari), dibandingkan akhir pekan (~1.800 per hari).
+### 2. Descriptive Analytics
+* **Temporal Analysis**: Evaluated passenger volume trends across weekdays vs. weekends.
+* **Corridor & Station Performance**: Identified high-traffic hubs (e.g., *Halte Penjaringan, Garuda Taman Mini, BKN*) and underutilized routes.
+* **Travel Time Distribution**: Measured average trip durations, highlighting that peak hour trips average **74.5 minutes**.
 
-2. Pola Penggunaan dan Masalah Operasional
-   - Sebanyak 1.344 transaksi (3.55%) tidak memiliki data tap-out, dan 709 di antaranya tetap dikenakan biaya, menunjukkan potensi masalah sistem atau kepatuhan pengguna.
-   - Ditemukan 4 kasus transaksi duplikat (waktu & halte tap-in sama), yang dapat menimbulkan error pada pencatatan jumlah penumpang.
-   - Tidak ditemukan indikasi penyalahgunaan kartu elektronik berdasarkan perbedaan gender atau tahun lahir, maupun penggunaan kartu dalam waktu yang terlalu singkat.
+### 3. Inferential Statistical Testing
+* **T-Test**: Conducted to statistically verify the impact of peak vs. non-peak hours on overall trip durations.
+* **Chi-Square Test**: Applied to test hypotheses regarding electronic card usage behaviors, passenger demographics (gender/birth year), and potential card misuse.
 
-3. Distribusi & Utilisasi Koridor
-   - Beberapa koridor seperti “Rusun Marunda – Waduk Pluit” memiliki interquartile range durasi perjalanan yang tinggi (~58 menit), menunjukkan inkonsistensi waktu tempuh.
-   - Terdapat 10 koridor dan 10 halte yang hanya mencatat ≤54 transaksi, bahkan beberapa halte hanya tercatat 1 transaksi — perlu evaluasi apakah masih aktif, terimbas proyek konstruksi, atau tidak strategis.
+### 4. Interactive Dashboard
+* Integrated with **Tableau** to present a comprehensive *Origin-Destination (OD) Matrix*, mapping out the entire passenger flow across the DKI Jakarta region.
 
-4. Kualitas Data
-   - Tidak ditemukan inkonsistensi dalam penamaan halte atau koordinat GPS. Artinya, sistem sudah cukup konsisten dalam pencatatan lokasi dan identitas halte.
+---
 
-**Rekomendasi**
+## 📊 Dataset & Attributes
 
-Cara meningkatkan jumlah pelanggan Transjakarta dan meningkatkan kepuasan pelanggan saat menggunakan layanan Transjakarta:
+The primary dataset consists of **37,900 transaction rows and 22 columns**, capturing granular tap-in and tap-out passenger movements.
 
-1. Penambahan petugas halte terutama di halte ramai pelanggan dan di jam sibuk agar dapat mengatur penumpang.
-2. Penambahan bus untuk rute dengan jumlah pelanggan terbanyak dan mempersempit headway bus dan juga memperbanyak frekuensi bus terutama pada jam-jam sibuk agar waktu tunggu bus tidak terlalu lama.  
-3. Untuk meningkatkan efisiensi waktu perjalanan, Transjakarta dapat mempertimbangkan rekomendasi berikut:
-   * Evaluasi dan sesuaikan rute bus untuk meminimalkan kemungkinan macet atau jalan yang lambat.
-   * Tingkatkan frekuensi layanan bus pada rute yang sering mengalami kemacetan untuk mengurangi waktu tunggu penumpang.
-   * Perbarui sistem informasi penumpang untuk memberikan estimasi waktu perjalanan yang lebih akurat dan informasi terkini mengenai kondisi lalu lintas melalui aplikasi yang informasinya bisa diakses secara realtime oleh penumpang.
-4. Dengan jumlah pelanggan yang didominasi oleh perempuan dan didominasi oleh orang dewasa maka perlu adanya penambahan bus dan ruang khusus perempuan di setiap bus layanan Transjakarta. Saat ini, Transjakarta memiliki bus pink yang hanya ada di beberapa koridor tertentu saja yaitu koridor 2, koridor 3, koridor 9, koridor 13 dan koridor 5. Maka bisa dilakukan penambahan di semua koridor dan layanan khususnya di koridor ramai pelanggan. 
-5. Mayoritas metode pembayaran pelanggan adalah bank DKI, hal ini menunjukkan bahwa mayoritas pelanggan Transjakarta adalah pengguna bank DKI. Di halte Transjakarta ada vending machine yang menjual kartu. Transjakarta harus menyediakan kartu bank DKI lebih banyak dibandingkan dengan jenis kartu lainnya atau lebih mempromosikan metode pembayaran lainnya kepada pelanggan. 
-6. Layanan yang sering digunakan oleh pelanggan adalah layanan reguler, layanan reguler juga harus disediakan armada yang banyak karena minatnya banyak dibandingkan layanan lainnya agar waktu tunggu penumpang tidak lama dan load factor bus tidak melebihi kapasitas.
-7. Dari visualisasi origin-destination di Tableau pun bahwa Layanan Transjakarta sudah mencakup seluruh wilayah DKI Jakarta, maka perlu adanya peningkatan promosi mengenai layanan dan peningkatan layanan untuk menarik minat masyarakat untuk menggunakan layananan Transjakarta.
+### Key Data Insights Summary
+* **Peak vs. Off-Peak**: Weekday passenger volume (~6,800/day) vastly outweighs weekend volume (~1,800/day).
+* **Corridor Inconsistency**: The *"Rusun Marunda – Waduk Pluit"* corridor shows extreme travel time volatility with an Interquartile Range (IQR) of **~58 minutes**.
+* **The "Kampung Rambutan - Blok M" Dilemma**: Records the highest average duration (**~85 minutes**) despite being among the top 10 *lowest* passenger volume corridors—indicating severe route bottlenecks.
+
+---
+
+## 💡 Strategic Business Recommendations
+
+To optimize fleet utilization, maximize capacity, and improve passenger satisfaction, the following measures are recommended:
+
+1. **Peak-Hour Fleet & Crew Optimization**
+   * Increase bus frequency and tighten *headway* intervals during morning (06:00–09:00) and evening (16:00–19:00) peak hours.
+   * Deploy additional station marshals at high-traffic entry points like *Halte Penjaringan* to manage boarding crowds.
+
+2. **Demographic-Based Fleet Adjustments**
+   * Since the passenger base is heavily dominated by adult females, expand the deployment of **"Bus Pink" (Female-Only Fleet)**. Currently restricted to corridors 2, 3, 5, 9, and 13, these should be scaled to other high-density regular lines.
+
+3. **Smart Passenger Information Systems**
+   * Introduce a real-time, GPS-backed passenger information application. Providing live ETA (Estimated Time of Arrival) updates allows passengers to plan trips around heavy delays.
+
+4. **Vending Machine & Payment Strategy**
+   * As **Bank DKI** remains the most dominant payment method used by commuters, TransJakarta must prioritize stocking Bank DKI cards in station vending machines while aggressively promoting alternative electronic payment channels.
+
+5. **Route Rationalization & Station Evaluation**
+   * Re-evaluate the 10 corridors and 10 stations that recorded $\le 54$ transactions (some with just 1 transaction). Investigate whether these routes are dormant due to active infrastructure construction or poor strategic placement.
+
+---
+
+## 🛠️ Requirements & Technical Stack
+
+The analysis is completely built using Python's robust data science ecosystem:
+
+* **Data Manipulation**: `pandas`, `numpy`
+* **Statistical Modeling**: `scipy` (for T-Test and Chi-Square)
+* **Visualization**: `matplotlib`, `seaborn`, and **Tableau** (for spatial OD matrices)
+* **Environment**: Jupyter Notebook (`.ipynb`)
