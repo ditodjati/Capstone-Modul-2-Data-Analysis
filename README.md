@@ -4,7 +4,7 @@ A data-driven analytics project aimed at evaluating operational performance, pas
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 TransJakarta is the backbone of public transportation in Jakarta. However, operational bottlenecks often hinder its efficiency. This project focuses on analyzing real transaction data to identify pain points in passenger distribution, travel times, and system compliance.
 
 Based on the data analysis and supporting operational contexts, this project highlights several core focus areas:
@@ -15,7 +15,7 @@ Based on the data analysis and supporting operational contexts, this project hig
 
 ---
 
-## 🚀 Key Features & Analysis Modules
+## Key Features & Analysis Modules
 
 The analytical workflow within the project notebook is structured as follows:
 
@@ -38,7 +38,7 @@ The analytical workflow within the project notebook is structured as follows:
 
 ---
 
-## 📊 Dataset & Attributes
+## Dataset & Attributes
 
 The primary dataset consists of **37,900 transaction rows and 22 columns**, capturing granular tap-in and tap-out passenger movements.
 
@@ -49,7 +49,7 @@ The primary dataset consists of **37,900 transaction rows and 22 columns**, capt
 
 ---
 
-## 💡 Strategic Business Recommendations
+## Strategic Business Recommendations
 
 To optimize fleet utilization, maximize capacity, and improve passenger satisfaction, the following measures are recommended:
 
@@ -71,7 +71,7 @@ To optimize fleet utilization, maximize capacity, and improve passenger satisfac
 
 ---
 
-## 🛠️ Requirements & Technical Stack
+## Requirements & Technical Stack
 
 The analysis is completely built using Python's robust data science ecosystem:
 
