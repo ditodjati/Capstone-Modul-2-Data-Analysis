@@ -40,15 +40,15 @@ slows trips down, and where the current recommendation should focus.
 ## Repository Structure
 
 ```
-transjakarta-congestion-analysis/
+Transjakarta-Congestion-Analysis/
 ├── data/
-│ ├── raw/ # Original, untouched source data
-│ └── processed/ # Cleaned, feature-engineered checkpoint
+│ ├── raw/
+│ └── processed/
 ├── notebooks/
-│ └── transjakarta_congestion_analysis.ipynb
-├── images/ # Exported chart PNGs
-├── requirements.txt
-└── README.md
+│ └── Transjakarta_Congestion_Analysis.ipynb
+├── images/
+├── README.md
+└── requirements.txt
 ```
 
 
