@@ -43,13 +43,14 @@ slows trips down, and where the current recommendation should focus.
 Transjakarta-Congestion-Analysis/
 ├── data/
 │ ├── processed/
-│ |   └── .csv
-│ └── raw/
-│     └── dfTransjakarta.csv
+│ |   └── transjakarta_congestion_cleaned.csv
+│ ├── raw/
+│ |   └── dfTransjakarta.csv
+│ └── Transjakarta.docx
 ├── images/
-│ ├── .png
-│ ├── .png
-│ └── .png
+│ ├── duration_peak_vs_nonpeak.png
+│ ├── hourly_transaction_volume.png
+│ └── top_corridors_peak_volume.png
 ├── notebooks/
 │ └── Transjakarta_Congestion_Analysis.ipynb
 ├── README.md
