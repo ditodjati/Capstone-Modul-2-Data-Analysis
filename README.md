@@ -42,11 +42,16 @@ slows trips down, and where the current recommendation should focus.
 ```
 Transjakarta-Congestion-Analysis/
 ├── data/
-│ ├── raw/
-│ └── processed/
+│ ├── processed/
+│ |   └── .csv
+│ └── raw/
+│     └── dfTransjakarta.csv
+├── images/
+│ ├── .png
+│ ├── .png
+│ └── .png
 ├── notebooks/
 │ └── Transjakarta_Congestion_Analysis.ipynb
-├── images/
 ├── README.md
 └── requirements.txt
 ```
@@ -71,7 +76,7 @@ python -m venv venv
 pip install -r requirements.txt
 ```
 
-Then open `notebooks/transjakarta_congestion_analysis.ipynb` in VS Code or
+Then open `notebooks/Transjakarta_Congestion_Analysis.ipynb` in VS Code or
 Jupyter and select the `venv` kernel.
 
 ## Limitations
